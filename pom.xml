@@ -6,7 +6,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>momentjs</artifactId>
     <name>Moment.js</name>
-    <version>1.7.2-SNAPSHOT</version>
+    <version>1.7.2</version>
     <description>WebJar for Moment.js</description>
     <url>http://webjars.org</url>
 
@@ -22,7 +22,7 @@
         <url>http://github.com/webjars/momentjs</url>
         <connection>scm:git:https://github.com/webjars/momentjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/momentjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>momentjs-1.7.2</tag>
     </scm>
 
     <developers>
