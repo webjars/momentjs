@@ -12,7 +12,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>momentjs</artifactId>
     <name>Moment.js</name>
-    <version>1.7.3-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <description>WebJar for Moment.js</description>
     <url>http://webjars.org</url>
 
@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>1.7.2</upstreamVersion>
+        <upstreamVersion>2.0.0</upstreamVersion>
         <downloadUrl>https://raw.github.com/timrwood/moment/${upstreamVersion}</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destinationDir>
     </properties>
