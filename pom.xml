@@ -12,7 +12,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>momentjs</artifactId>
     <name>Moment.js</name>
-    <version>2.0.0-1-SNAPSHOT</version>
+    <version>2.0.0-1</version>
     <description>WebJar for Moment.js</description>
     <url>http://webjars.org</url>
 
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/momentjs</url>
         <connection>scm:git:https://github.com/webjars/momentjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/momentjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>momentjs-2.0.0-1</tag>
     </scm>
 
     <developers>
@@ -81,12 +81,12 @@
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/moment-${upstream.version}">
-                                        <include name="moment.js"/>
-                                        <include name="lang/*.js"/>
-                                        <include name="min/*.js"/>
-                                        <include name="min/lang/*.js"/>
-                                        <include name="package.json"/>
-                                        <include name="package.js"/>
+                                        <include name="moment.js" />
+                                        <include name="lang/*.js" />
+                                        <include name="min/*.js" />
+                                        <include name="min/lang/*.js" />
+                                        <include name="package.json" />
+                                        <include name="package.js" />
                                     </fileset>
                                 </move>
                             </target>
