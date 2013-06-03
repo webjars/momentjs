@@ -41,9 +41,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>2.0.0</upstreamVersion>
-        <downloadUrl>https://raw.github.com/timrwood/moment/${upstreamVersion}</downloadUrl>
-        <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destinationDir>
+        <upstream.version>2.0.0</upstream.version>
+        <upstream.url>https://github.com/timrwood/moment/archive</upstream.url>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
 
     <build>
@@ -54,23 +54,42 @@
                 <version>1.0-beta-4</version>
                 <executions>
                     <execution>
-                        <id>download-js</id>
                         <phase>process-resources</phase>
-                        <goals><goal>download-single</goal></goals>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
                         <configuration>
-                            <url>${downloadUrl}</url>
-                            <fromFile>moment.js</fromFile>
-                            <toDir>${destinationDir}</toDir>
+                            <url>${upstream.url}</url>
+                            <fromFile>${upstream.version}.zip</fromFile>
+                            <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
                     <execution>
-                        <id>download-min-js</id>
                         <phase>process-resources</phase>
-                        <goals><goal>download-single</goal></goals>
+                        <goals><goal>run</goal></goals>
                         <configuration>
-                            <url>${downloadUrl}/min</url>
-                            <fromFile>moment.min.js</fromFile>
-                            <toDir>${destinationDir}</toDir>
+                            <target>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
+                                <move todir="${destDir}">
+                                    <fileset dir="${project.build.directory}/moment-${upstream.version}">
+                                        <include name="moment.js"/>
+                                        <include name="lang/*.js"/>
+                                        <include name="min/*.js"/>
+                                        <include name="min/lang/*.js"/>
+                                        <include name="package.json"/>
+                                        <include name="package.js"/>
+                                    </fileset>
+                                </move>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
