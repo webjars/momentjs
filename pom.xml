@@ -23,7 +23,10 @@
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
         <requirejs>
             {
-                "paths": { "momentjs": "moment" }
+                "paths": {
+                    "momentjs": "moment",
+                    "moment": "moment"
+                }
             }
         </requirejs>
     </properties>
