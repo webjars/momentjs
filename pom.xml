@@ -25,7 +25,8 @@
             {
                 "paths": {
                     "momentjs": "moment",
-                    "moment": "moment"
+                    "moment": "moment",
+                    "moment-with-locales": "min/moment-with-locales"
                 }
             }
         </requirejs>
