@@ -74,9 +74,8 @@
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/moment-${upstream.version}">
                                         <include name="moment.js" />
-                                        <include name="lang/*.js" />
+                                        <include name="locale/*.js" />
                                         <include name="min/*.js" />
-                                        <include name="min/lang/*.js" />
                                         <include name="package.json" />
                                         <include name="package.js" />
                                     </fileset>
