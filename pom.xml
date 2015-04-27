@@ -12,13 +12,13 @@
     <groupId>org.webjars</groupId>
     <artifactId>momentjs</artifactId>
     <name>Moment.js</name>
-    <version>2.9.1-SNAPSHOT</version>
+    <version>2.10.2-SNAPSHOT</version>
     <description>WebJar for Moment.js</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>2.9.0</upstream.version>
+        <upstream.version>2.10.2</upstream.version>
         <upstream.url>https://github.com/timrwood/moment/archive/${upstream.version}.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
@@ -66,18 +66,18 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive" />
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
+                                <echo message="download archive"/>
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
+                                <echo message="unzip archive"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
+                                <echo message="moving resources"/>
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/moment-${upstream.version}">
-                                        <include name="moment.js" />
-                                        <include name="locale/*.js" />
-                                        <include name="min/*.js" />
-                                        <include name="package.json" />
-                                        <include name="package.js" />
+                                        <include name="moment.js"/>
+                                        <include name="locale/*.js"/>
+                                        <include name="min/*.js"/>
+                                        <include name="package.json"/>
+                                        <include name="package.js"/>
                                     </fileset>
                                 </move>
                             </target>
@@ -88,12 +88,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.5.1</version>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.3</version>
+                <version>1.6.5</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
